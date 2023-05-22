@@ -1,0 +1,15 @@
+{
+  "name": "todo-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ejayazon/todo-server.git",
+  "author": "Elton John Acevedo Yazon <eltonjohnyazon@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start:server:local": "cross-env ENV=local node --trace-warnings --watch server/index.js"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "express": "^4.18.2"
+  }
+}

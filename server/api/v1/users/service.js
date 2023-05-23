@@ -44,7 +44,8 @@ const deleteUser = async (id, options = {}) => {
   return sequelize.transaction(async (transaction) => {
     const _opts = { transaction, ...options };
     const user = await getByPk(id, _opts);
-    return user.destroy({ force: true, ..._opts });
+    await user.destroy({ force: true, ..._opts });
+    return { id };
   });
 };
 

@@ -7,10 +7,16 @@ info:
 servers:
   - url: http://localhost:3000/api/v1
 
+tags:
+  - name: Users
+  - name: Tasks
+
 paths:
   /users:
     post:
       summary: Create a User
+      tags:
+        - Users
       requestBody:
         content:
           application/json:
@@ -28,6 +34,8 @@ paths:
           description: Successful
     get:
       summary: List Users
+      tags:
+        - Users
       responses:
         200:
           description: Successful
@@ -35,6 +43,8 @@ paths:
   /users/{id}:
     patch:
       summary: Update a User
+      tags:
+        - Users
       parameters:
         - name: id
           in: path
@@ -59,6 +69,8 @@ paths:
           description: Successful
     get:
       summary: Get a User
+      tags:
+        - Users
       parameters:
         - name: id
           in: path
@@ -71,6 +83,8 @@ paths:
           description: Successful
     delete:
       summary: Delete a User
+      tags:
+        - Users
       parameters:
         - name: id
           in: path

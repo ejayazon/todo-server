@@ -3,6 +3,7 @@ const promiseController = (api) => async (req, res) => {
     const response = await api(req, res);
     res.json(response);
   } catch (error) {
+    console.log('promiseController', error);
     res.status(error.status || 500).json({
       status: error.status || 500,
       message: error,

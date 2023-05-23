@@ -53,7 +53,7 @@ module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', getDefinition(DataTypes), {
     paranoid: true,
   });
-  User.prototype.toAPIJSON = () => {
+  User.prototype.toAPIJSON = function () {
     const plainUser = this.get({ plain: true });
     const {} = plainUser;
     const { id, ...userDetails } = plainUser;

@@ -1,0 +1,83 @@
+openapi: '3.0.0'
+
+info:
+  title: 'Todo APIs'
+  version: '1.0.0'
+
+servers:
+  - url: http://localhost:3000/api/v1
+
+paths:
+  /users:
+    post:
+      summary: Create a User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+      responses:
+        200:
+          description: Successful
+    get:
+      summary: List Users
+      responses:
+        200:
+          description: Successful
+
+  /users/{id}:
+    patch:
+      summary: Update a User
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+      responses:
+        200:
+          description: Successful
+    get:
+      summary: Get a User
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        200:
+          description: Successful
+    delete:
+      summary: Delete a User
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        200:
+          description: Successful

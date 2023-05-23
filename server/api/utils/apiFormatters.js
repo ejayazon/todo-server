@@ -3,7 +3,7 @@ const entityFormatter = (data) => {
   if (data && data.toAPIJSON) {
     formarttedResponse = { ...data.toAPIJSON() };
   }
-  return { formarttedResponse };
+  return { data: formarttedResponse };
 };
 
 const entitiesFormatter = (data, query) => {

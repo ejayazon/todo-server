@@ -7,11 +7,11 @@ const path = require('path');
 const swaggerApiV1Docs = YAML.load(
   path.join(__serverRoot, 'documentation/apiv1.yaml')
 );
-// const tasks = require('./tasks');
+const tasks = require('./tasks');
 const users = require('./users');
 
 module.exports = () => {
-  // router.use('/tasks', tasks());
+  router.use('/tasks', tasks);
   router.use('/users', users);
   router.use('/docs', swaggerUi.serve, (req, res) => {
     swaggerUi.setup(swaggerApiV1Docs)(req, res);

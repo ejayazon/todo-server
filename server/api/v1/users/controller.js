@@ -1,11 +1,9 @@
 const { promiseController } = require('../../utils');
+const service = require('./service');
 
-const get = promiseController((req) => {
-  const userDummy = {
-    name: 'Elton',
-    nickname: 'Ejay',
-  };
-  return userDummy;
+const get = promiseController(async (req) => {
+  const user = await service.get(req.params.id);
+  return user;
 });
 
 module.exports = {

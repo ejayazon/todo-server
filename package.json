@@ -6,11 +6,18 @@
   "author": "Elton John Acevedo Yazon <eltonjohnyazon@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "sequelize:migrate:local": "cross-env sequelize db:migrate",
     "start:server:local": "cross-env ENV=local node --trace-warnings --watch server/index.js"
   },
   "dependencies": {
-    "cross-env": "^7.0.3",
+    "connect-session-sequelize": "^7.1.6",
     "express": "^4.18.2",
-    "morgan": "^1.10.0"
+    "express-session": "^1.17.3",
+    "morgan": "^1.10.0",
+    "pg": "^8.11.0",
+    "sequelize": "^6.31.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
